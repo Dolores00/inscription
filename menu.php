@@ -58,6 +58,7 @@ $result = $conn->query($sql);
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Email</th>
+                    <th>filliere</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -70,6 +71,7 @@ $result = $conn->query($sql);
                                 <td>".$row['nom']."</td>
                                 <td>".$row['prenom']."</td>
                                 <td>".$row['email']."</td>
+                                <td>".$row['filliere']."</td>
                                 <td>
                                     <a href='modifier.php?id=".$row['id']."' class='btn btn-warning btn-sm'>Modifier</a>
                                     <a href='supprimer.php?id=".$row['id']."' class='btn btn-danger btn-sm'>Supprimer</a>

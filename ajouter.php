@@ -5,9 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
+    $filliere = $_POST['filliere'];
    
 
-    $sql = "INSERT INTO etudiants(nom, prenom, email) VALUES ('$nom', '$prenom', '$email')";
+    $sql = "INSERT INTO etudiants(nom, prenom, email,filliere) VALUES ('$nom', '$prenom', '$email','$filliere')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Nouvel enregistrement créé avec succès";
@@ -60,6 +61,12 @@ body {
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" class="form-control" id="email" name="email" required>
+                
+                <div class="form-group">
+                <label for="filliere">filliere:</label>
+                <input type="text" class="form-control" id="filliere" name="filliere" required>
+                
+            </div>
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
             <a href="menu.php" class="btn btn-info">voir</a>

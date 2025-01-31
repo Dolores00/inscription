@@ -6,8 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $email = $_POST['email'];
+    $filliere = $_POST['filliere'];
    
-    $sql = "UPDATE etudiants SET nom='$nom', prenom='$prenom', email='$email' WHERE id='$id'";
+    $sql = "UPDATE etudiants SET nom='$nom', prenom='$prenom', email='$email', filliere='$filliere', WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
         header('Location: menu.php');
@@ -68,6 +69,10 @@ if (isset($_GET['id'])) {
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" class="form-control" id="email" name="email" 
+            </div>
+            <div class="form-group">
+                <label for="filliere">filliere:</label>
+                <input type="text" class="form-control" id="filliere" name="filliere" 
             </div>
             <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
